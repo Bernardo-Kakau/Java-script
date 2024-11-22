@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imigrante</title>
+</head>
+<body>
+    <h1>Sistema de Imigração</h1>
+    <p>O País é: <input type="text" name="txtimi" id="txtimi"></p>
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular() {
+            var txtp = document.querySelector('input#txtimi');
+            var res = document.querySelector('div#res');
+            var país = txtp.value.trim().toLowerCase(); // Obtém o valor do campo e normaliza para minúsculas
+            res.innerHTML = `<p>Vivendo em ${país.charAt(0).toUpperCase() + país.slice(1)}</p>`; // Formata a primeira letra em maiúscula
+
+            if (país !== 'brasil') {
+                res.innerHTML += '<p>Você é estrangeiro.</p>';
+            } else {
+                res.innerHTML += '<p>Você é Brasileiro.</p>';
+            }
+        }
+    </script>
+</body>
+</html>

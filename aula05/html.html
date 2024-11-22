@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imigrante</title>
+</head>
+<body>
+    <h1> Sistema de imigração</h1>
+    O Pais é <input type="text" name = txtimi id="txtimi">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+
+    </div>
+    <script>
+        function calcular(){
+         var txtp = document.querySelector('input#txtimi');
+         var res = document.querySelector('div#res');
+         var país = Text(txtp.value);
+         res.innerHTML = `<p>Vivendo em ${país}<p>`;
+         if(país != 'brasil'){
+           res.innerHTML += '<p> você é estrageiro ';
+         }else{
+            res.innerHTML +='<p> você é Brasileiro';
+         }
+        }
+    </script>
+</body>
+</html>
